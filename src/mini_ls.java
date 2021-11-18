@@ -13,14 +13,14 @@ public class mini_ls {
 
 		
 		
-		if(args.length==1 && args[0].equals("-r")) {     //drill down to dir after -r
+		if(args.length==1 && args[0].equals("-r")) {     //drill down to current after -r
 
 			
 			listf(System.getProperty("user.dir"));		//Detection of -r - print all folders and files.
 
 		}
 		
-		else if(args.length > 1 && args[0].equals("-r")) {		//drill down on current
+		else if(args.length > 1 && args[0].equals("-r")) {		//drill down when -r+dir
 
 			
 			listf(args[1]);			//Detection of -r - print all folders and files.
@@ -55,11 +55,11 @@ public class mini_ls {
 		modified(file);
 		}
 		
-		else if (file.isDirectory()) {
+		else if (file.isDirectory()) {					//When path is folder and not a file.
 			System.out.println(file.getName() + " is a folder");
 		}
 		
-		else if (file.isFile()==false) {
+		else if (file.isFile()==false) {						//When file does not exsist on path.
 			System.out.println("File Name: "+file.getName()+" File does not exist");
 		}
 		
